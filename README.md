@@ -1,1 +1,1 @@
-# reserva-amandoyoga
+# Reserva de salas y salones de Amandoyoga
