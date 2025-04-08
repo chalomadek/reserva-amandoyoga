@@ -75,24 +75,41 @@
     margin: 0;
     font-size: 2.6em; /* <- Esto es lo que define el tamaño */
     }
-    .nav-btns {
-    margin-top: 20px;
-    text-align: center;
-    }
+.navegacion-salas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 5px;
+  margin-bottom: 10px;
+  border-radius: 10px;
 
-    .nav-btns a {
-    background: #3498db;
-    color: white;
-    padding: 10px 10px;
-    text-decoration: none;
-    border-radius: 10px;
-    font-size: 0.9em;
-    margin: 0 10px;
-    }
+}
 
-.nav-btns a:hover {
+.navegacion-salas a {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9em;
+  text-align: center;
+  min-width: 100px;
+  border-radius: 10px;
+}
+  .navegacion-salas a:hover {
   background: #2980b9;
 }
+/* Vista móvil */
+@media (max-width: 600px) {
+  .navegacion-salas {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navegacion-salas a {
+    width: 50%;
+  }
+
   </style>
 </head>
 <body>
@@ -102,7 +119,7 @@
   <h1>Reserva de salas y salón de Amandoyoga</h1>
   <p class="subtitulo">Consulta la disponibilidad de cada sala y reserva el espacio directamente desde aquí.</p>
   <hr class="linea-separadora">
-  <div class="nav-btns">
+  <div class="navegacion-salas">
   <a href="#sala1">Ir a Sala 1</a>
   <a href="#sala2">Ir a Sala 2</a>
   <a href="#sala3">Ir a Sala 3</a>
