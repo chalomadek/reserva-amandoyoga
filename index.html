@@ -32,9 +32,9 @@
       display: inline-block;
       background: #3498db;
       color: white;
-      padding: 10px 20px;
+      padding: 10px 10px;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 10px;
       font-size: 0.95em; /* <- Esto es lo que define el tamaño */
     }
     .link-agendar:hover {
@@ -75,6 +75,24 @@
     margin: 0;
     font-size: 2.6em; /* <- Esto es lo que define el tamaño */
     }
+    .nav-btns {
+    margin-top: 20px;
+    text-align: center;
+    }
+
+    .nav-btns a {
+    background: #3498db;
+    color: white;
+    padding: 10px 10px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 0.9em;
+    margin: 0 10px;
+    }
+
+.nav-btns a:hover {
+  background: #2980b9;
+}
   </style>
 </head>
 <body>
@@ -84,9 +102,17 @@
   <h1>Reserva de salas y salón de Amandoyoga</h1>
   <p class="subtitulo">Consulta la disponibilidad de cada sala y reserva el espacio directamente desde aquí.</p>
   <hr class="linea-separadora">
+  <div class="nav-btns">
+  <a href="#sala1">Ir a Sala 1</a>
+  <a href="#sala2">Ir a Sala 2</a>
+  <a href="#sala3">Ir a Sala 3</a>
+  <a href="#sala4">Ir a Sala 4</a>
+  <a href="#salon">Ir al Salón</a>
+</div>
+<hr class="linea-separadora">
 </div>
 
-  <div class="calendar-container">
+  <div class="calendar-container" id="sala1">
     <div class="sala-header">
     <h2>Sala 1</h2>
     <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3LGjnVCX0IEsSFL0ELVhTRcDDApZN382AcMyIJIRnpz80sR21x_zIxdPyC0KoD-LhsavT-RX_B?gv=true" class="link-agendar" target="_blank">Reservar</a>
@@ -94,7 +120,7 @@
     <iframe src="https://calendar.google.com/calendar/embed?height=800&wkst=2&ctz=America%2FSantiago&showPrint=0&showTz=0&title=Sala%202&showTitle=0&mode=WEEK&showCalendars=0&src=YW1hbmRveW9nYS5zYWxhMUBnbWFpbC5jb20&color=%237CB342" style="border-width:0" width="600" height="800" frameborder="0" scrolling="no"></iframe>
   </div>
 
-  <div class="calendar-container">
+  <div class="calendar-container" id="sala2">
     <div class="sala-header">
     <h2>Sala 2</h2>
     <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1O-pVlyde4X64huyyM1PIqS_lSdGsNVpYxTzuIeN7kYeYgET8ipk9t7AENfVYxzHJpUku1StXK?gv=true" class="link-agendar" target="_blank">Reservar</a>
@@ -102,7 +128,7 @@
     <iframe src="https://calendar.google.com/calendar/embed?height=800&wkst=2&ctz=America%2FSantiago&showPrint=0&showTz=0&title=Sala%202&showTitle=0&mode=WEEK&showCalendars=0&src=YW1hbmRveW9nYS5zYWxhMkBnbWFpbC5jb20&color=%23039BE5" style="border-width:0" width="600" height="800" frameborder="0" scrolling="no"></iframe>
   </div>
 
-  <div class="calendar-container">
+  <div class="calendar-container" id="sala3">
     <div class="sala-header">
     <h2>Sala 3</h2>
     <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2yW0aljlbEtrFOMqTvFHFawbjGeZNxoiXJaNdGCbvohBowpg73aDVZ2Ou2a_RXJUxYG3hbwoEv?gv=true" class="link-agendar" target="_blank">Reservar</a>
@@ -110,7 +136,7 @@
     <iframe src="https://calendar.google.com/calendar/embed?height=800&wkst=2&ctz=America%2FSantiago&showPrint=0&showTz=0&title=Sala%202&showTitle=0&mode=WEEK&showCalendars=0&src=YW1hbmRveW9nYS5zYWxhM0BnbWFpbC5jb20&color=%23616161" style="border-width:0" width="600" height="800" frameborder="0" scrolling="no"></iframe>
   </div>
 
-  <div class="calendar-container">
+  <div class="calendar-container" id="sala4">
     <div class="sala-header">
     <h2>Sala 4</h2>
     <a href="https://calendar.google.com/calendar/u/0/selfsched?sstoken=TOKEN4" class="link-agendar" target="_blank">Reservar</a>
@@ -119,7 +145,7 @@
     
   </div>
 
-  <div class="calendar-container">
+  <div class="calendar-container" id="salon">
     <div class="sala-header">
     <h2>Salón</h2>
     <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2ij6zQHq-E7eXuFyVdW4M5s20kDyYkKPlqAxaSWtxxm4LsZCZsGL1BLhEdb3tOvJrsdDXvwM17?gv=true" class="link-agendar" target="_blank">Reservar</a>
