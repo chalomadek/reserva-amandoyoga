@@ -36,9 +36,15 @@
       text-decoration: none;
       border-radius: 10px;
       font-size: 0.95em; /* <- Esto es lo que define el tamaño */
+      transition: all 0.3s ease-in-out;
     }
     .link-agendar:hover {
       background: #2980b9;
+      transform: scale(1.05);
+    }
+    .link-agendar:active {
+    transform: scale(0.97);
+     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
     }
     .encabezado {
     text-align: center;
@@ -95,9 +101,15 @@
   text-align: center;
   min-width: 100px;
   border-radius: 10px;
+  transition: all 0.3s ease-in-out;
 }
   .navegacion-salas a:hover {
   background: #2980b9;
+  transform: scale(1.05);
+}
+.navegacion-salas a:active {
+  transform: scale(0.97);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 /* Vista móvil */
 @media (max-width: 600px) {
