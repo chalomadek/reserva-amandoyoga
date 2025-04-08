@@ -114,13 +114,16 @@
 /* Vista móvil */
 @media (max-width: 600px) {
   .navegacion-salas {
-    flex-direction: column;
-    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
   }
 
   .navegacion-salas a {
-    width: 50%;
+    width: calc(20% - 10px);
   }
+
 
   </style>
 </head>
