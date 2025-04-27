@@ -36,155 +36,220 @@
       padding: 10px 10px;
       text-decoration: none;
       border-radius: 10px;
-      font-size: 0.95em; /* <- Esto es lo que define el tamaño */
+      font-size: 0.95em;
       transition: all 0.3s ease-in-out;
+      cursor: pointer;
     }
     .link-agendar:hover {
       background: #007464;
       transform: scale(1.05);
     }
     .link-agendar:active {
-    transform: scale(0.97);
-     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+      transform: scale(0.97);
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
     }
     .encabezado {
-    text-align: center;
-    margin-bottom: 25px;
+      text-align: center;
+      margin-bottom: 25px;
     }
-
     .logo-grande {
-    height: 150px; /* puedes ajustar a tu gusto */
-    width: auto;
-    margin-bottom: 10px;
+      height: 150px;
+      width: auto;
+      margin-bottom: 10px;
     }
-
     .subtitulo {
-    font-size: 0.95em;
-    color: #555;
-    margin-top: 5px;
+      font-size: 0.95em;
+      color: #555;
+      margin-top: 5px;
     }
     .linea-separadora {
-    border: none;
-    border-top: 1px solid #ccc;
-    margin: 20px auto;
-    width: 80%;
+      border: none;
+      border-top: 1px solid #ccc;
+      margin: 20px auto;
+      width: 80%;
     }
     .sala-header {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* o space-around si prefieres */
-    gap: 20px;
-    margin-bottom: 10px;
-    flex-wrap: wrap; /* por si en móviles no cabe todo en una línea */
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 20px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
     }
-
     .sala-header h2 {
-    margin: 0;
-    font-size: 2.6em; /* <- Esto es lo que define el tamaño */
+      margin: 0;
+      font-size: 2.6em;
     }
-.navegacion-salas {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 5px;
-  margin-bottom: 10px;
-  border-radius: 10px;
-
-}
-
-.navegacion-salas a {
-  background-color: #019b93;
-  color: white;
-  padding: 10px 10px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-size: 0.9em;
-  text-align: center;
-  min-width: 100px;
-  border-radius: 10px;
-  transition: all 0.3s ease-in-out;
-}
-  .navegacion-salas a:hover {
-  background: #007464;
-  transform: scale(1.05);
-}
-.navegacion-salas a:active {
-  transform: scale(0.97);
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-/* Vista móvil */
-@media (max-width: 600px) {
-  .navegacion-salas {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  .navegacion-salas a {
-    width: calc(20% - 10px);
-  }
-
-
+    .navegacion-salas {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 5px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+    }
+    .navegacion-salas a {
+      background-color: #019b93;
+      color: white;
+      padding: 10px 10px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.9em;
+      text-align: center;
+      min-width: 100px;
+      border-radius: 10px;
+      transition: all 0.3s ease-in-out;
+    }
+    .navegacion-salas a:hover {
+      background: #007464;
+      transform: scale(1.05);
+    }
+    .navegacion-salas a:active {
+      transform: scale(0.97);
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Estilos para el modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.7);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: white;
+      width: 90%;
+      max-width: 900px;
+      height: 80%;
+      border-radius: 10px;
+      padding: 20px;
+      position: relative;
+    }
+    .close-modal {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 30px;
+      color: #aaa;
+      cursor: pointer;
+      z-index: 1001;
+    }
+    .close-modal:hover {
+      color: #333;
+    }
+    .modal-iframe {
+      width: 100%;
+      height: calc(100% - 20px);
+      border: none;
+    }
+    
+    /* Vista móvil */
+    @media (max-width: 600px) {
+      .navegacion-salas {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+      }
+      .navegacion-salas a {
+        width: calc(20% - 10px);
+      }
+      .modal-content {
+        width: 95%;
+        height: 70%;
+      }
+    }
   </style>
 </head>
 <body>
   
   <div class="encabezado">
-  <img src="https://amandoyoga.cl/wp-content/uploads/2022/10/Logo.png" class="logo-grande">
-  <h1>Reserva de salas y salón de Amandoyoga</h1>
-  <p class="subtitulo">Consulta la disponibilidad de cada sala y reserva el espacio directamente desde aquí.</p>
-  <hr class="linea-separadora">
-  <div class="navegacion-salas">
-  <a href="#sala1">Ir a Sala 1</a>
-  <a href="#sala2">Ir a Sala 2</a>
-  <a href="#sala3">Ir a Sala 3</a>
-  <a href="#sala4">Ir a Sala 4</a>
-  <a href="#salon">Ir al Salón</a>
-</div>
-<hr class="linea-separadora">
-</div>
+    <img src="https://amandoyoga.cl/wp-content/uploads/2022/10/Logo.png" class="logo-grande">
+    <h1>Reserva de salas y salón de Amandoyoga</h1>
+    <p class="subtitulo">Consulta la disponibilidad de cada sala y reserva el espacio directamente desde aquí.</p>
+    <hr class="linea-separadora">
+    <div class="navegacion-salas">
+      <a href="#sala1">Ir a Sala 1</a>
+      <a href="#sala2">Ir a Sala 2</a>
+      <a href="#sala3">Ir a Sala 3</a>
+      <a href="#sala4">Ir a Sala 4</a>
+      <a href="#salon">Ir al Salón</a>
+    </div>
+    <hr class="linea-separadora">
+  </div>
+
+  <!-- Modal para reservas -->
+  <div id="reservaModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      <iframe id="modalIframe" class="modal-iframe" frameborder="0"></iframe>
+    </div>
+  </div>
 
   <div class="calendar-container" id="sala1">
     <div class="sala-header">
-    <h2>Sala 1</h2>
-    <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3LGjnVCX0IEsSFL0ELVhTRcDDApZN382AcMyIJIRnpz80sR21x_zIxdPyC0KoD-LhsavT-RX_B?gv=true" class="link-agendar" target="_blank">Reservar</a>
+      <h2>Sala 1</h2>
+      <a class="link-agendar" onclick="openModal('https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3LGjnVCX0IEsSFL0ELVhTRcDDApZN382AcMyIJIRnpz80sR21x_zIxdPyC0KoD-LhsavT-RX_B?gv=true')">Reservar</a>
     </div>
     <iframe src="https://calendar.google.com/calendar/embed?height=800&wkst=2&ctz=America%2FSantiago&showPrint=0&showTz=0&title=Sala%202&showTitle=0&mode=WEEK&showCalendars=0&src=YW1hbmRveW9nYS5zYWxhMUBnbWFpbC5jb20&color=%237CB342" style="border-width:0" width="600" height="800" frameborder="0" scrolling="no"></iframe>
   </div>
 
   <div class="calendar-container" id="sala2">
     <div class="sala-header">
-    <h2>Sala 2</h2>
-    <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1O-pVlyde4X64huyyM1PIqS_lSdGsNVpYxTzuIeN7kYeYgET8ipk9t7AENfVYxzHJpUku1StXK?gv=true" class="link-agendar" target="_blank">Reservar</a>
+      <h2>Sala 2</h2>
+      <a class="link-agendar" onclick="openModal('https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1O-pVlyde4X64huyyM1PIqS_lSdGsNVpYxTzuIeN7kYeYgET8ipk9t7AENfVYxzHJpUku1StXK?gv=true')">Reservar</a>
     </div>
     <iframe src="https://calendar.google.com/calendar/embed?height=800&wkst=2&ctz=America%2FSantiago&showPrint=0&showTz=0&title=Sala%202&showTitle=0&mode=WEEK&showCalendars=0&src=YW1hbmRveW9nYS5zYWxhMkBnbWFpbC5jb20&color=%23039BE5" style="border-width:0" width="600" height="800" frameborder="0" scrolling="no"></iframe>
   </div>
 
   <div class="calendar-container" id="sala3">
     <div class="sala-header">
-    <h2>Sala 3</h2>
-    <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2yW0aljlbEtrFOMqTvFHFawbjGeZNxoiXJaNdGCbvohBowpg73aDVZ2Ou2a_RXJUxYG3hbwoEv?gv=true" class="link-agendar" target="_blank">Reservar</a>
+      <h2>Sala 3</h2>
+      <a class="link-agendar" onclick="openModal('https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2yW0aljlbEtrFOMqTvFHFawbjGeZNxoiXJaNdGCbvohBowpg73aDVZ2Ou2a_RXJUxYG3hbwoEv?gv=true')">Reservar</a>
     </div>
     <iframe src="https://calendar.google.com/calendar/embed?height=800&wkst=2&ctz=America%2FSantiago&showPrint=0&showTz=0&title=Sala%202&showTitle=0&mode=WEEK&showCalendars=0&src=YW1hbmRveW9nYS5zYWxhM0BnbWFpbC5jb20&color=%23616161" style="border-width:0" width="600" height="800" frameborder="0" scrolling="no"></iframe>
   </div>
 
   <div class="calendar-container" id="sala4">
     <div class="sala-header">
-    <h2>Sala 4</h2>
-    <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2389CH0DeH4qvxZGp_T5qo__nYwHTXsF6hEDrcwWuy6uvmK2UglamejFk-Rbho3sE_P_yjBceA?gv=true" class="link-agendar" target="_blank">Reservar</a>
+      <h2>Sala 4</h2>
+      <a class="link-agendar" onclick="openModal('https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2389CH0DeH4qvxZGp_T5qo__nYwHTXsF6hEDrcwWuy6uvmK2UglamejFk-Rbho3sE_P_yjBceA?gv=true')">Reservar</a>
     </div>
     <iframe src="https://calendar.google.com/calendar/embed?height=800&wkst=2&ctz=America%2FSantiago&showPrint=0&showTz=0&title=Sala%202&showTitle=0&mode=WEEK&showCalendars=0&src=YW1hbmRveW9nYS5zYWxhNEBnbWFpbC5jb20&color=%23D50000" style="border-width:0" width="600" height="800" frameborder="0" scrolling="no"></iframe>
-    
   </div>
 
   <div class="calendar-container" id="salon">
     <div class="sala-header">
-    <h2>Salón</h2>
-    <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2ij6zQHq-E7eXuFyVdW4M5s20kDyYkKPlqAxaSWtxxm4LsZCZsGL1BLhEdb3tOvJrsdDXvwM17?gv=true" class="link-agendar" target="_blank">Reservar</a>
+      <h2>Salón</h2>
+      <a class="link-agendar" onclick="openModal('https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2ij6zQHq-E7eXuFyVdW4M5s20kDyYkKPlqAxaSWtxxm4LsZCZsGL1BLhEdb3tOvJrsdDXvwM17?gv=true')">Reservar</a>
     </div>
     <iframe src="https://calendar.google.com/calendar/embed?height=800&wkst=2&ctz=America%2FSantiago&showPrint=0&showTz=0&title=Sala%202&showTitle=0&mode=WEEK&showCalendars=0&src=YW1hbmRveW9nYS5zYWxvbkBnbWFpbC5jb20&color=%23AD1457" style="border-width:0" width="600" height="800" frameborder="0" scrolling="no"></iframe>
   </div>
 
+  <script>
+    function openModal(url) {
+      document.getElementById('modalIframe').src = url;
+      document.getElementById('reservaModal').style.display = 'flex';
+    }
+    
+    function closeModal() {
+      document.getElementById('reservaModal').style.display = 'none';
+      document.getElementById('modalIframe').src = '';
+    }
+    
+    // Cerrar modal al hacer clic fuera del contenido
+    window.onclick = function(event) {
+      const modal = document.getElementById('reservaModal');
+      if (event.target == modal) {
+        closeModal();
+      }
+    }
+  </script>
 </body>
 </html>
